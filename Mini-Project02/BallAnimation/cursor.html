@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            position: relative;
+            width: 100%;
+        }
+        nav {
+            position: absolute;
+            background-color:black;
+            z-index: 100;
+            color: white;
+            padding: 30px;
+            right: 30px;
+        }
+        nav ul li{
+            list-style: none;
+            font-weight: 600;
+        }
+        nav ul {
+            display: flex;
+           justify-content: center;
+           align-items: center;
+           gap: 30px;
+        }
+        .main{
+            width: 100%;
+            height: 100vh;
+            background-color:black;
+            position: relative;
+            color: white;
+            font-size: 100px;
+            scroll-behavior: smooth;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #cr{
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+            left: 0;
+            z-index: 9999;
+            background-color: white;
+            mix-blend-mode:difference;
+            transition: all linear 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+         <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>SKILL</li>
+            <li>CONTACT</li>
+         </ul>
+    </nav>
+    <div class="main">
+        SAURABH
+        <div id="cr"></div>
+    </div>
+    <script>
+        const cursor=document.getElementById('cr');
+        const main=document.querySelector('.main')
+        window.addEventListener('mousemove',(e)=>{
+              cursor.style.top=`${e.y}px`
+              cursor.style.left=`${e.x}px`
+        })
+    </script>
+</body>
+</html>

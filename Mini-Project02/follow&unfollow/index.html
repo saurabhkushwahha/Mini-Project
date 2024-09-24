@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous-follow&unfollow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        body {
+            background-color: lightslategrey;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+       
+        .container {
+            background-color: black;
+           color: white;
+            height: 400px;
+            width: 300px;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.589), inset -10px  -20px 5px rgba(0, 0, 0, 0.829);
+          cursor: pointer;   
+        }
+        .container .image {
+            margin: 0px auto;
+            height: 250px;
+            width: 300px;
+        }
+
+        .container img {
+            border-radius: 10px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: right;
+        }
+        .container p,h1{
+            padding: 5px;
+            text-align: center;
+            font-weight: 800;
+        }
+        .container .btn{
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .container .btn button{
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        #follow{
+            background-color: #00bfff;
+            /* box-shadow: 2px 3px 5px  #212121, inset -2px -3px 10px #414141; */
+        }
+        #follow:hover{
+            outline: 1px solid #00bfff;
+            background-color: #00bfff;
+        }
+        #love{
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            transform: translate(-50%,-50%) scale(0);
+            opacity:0;
+             transition: transform ease 0.5s;
+           
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./heart.png" alt="" id="love"  >
+        <div class="image">
+            <img src="../follow&unfollow/image.png" alt="">
+        </div>
+       <h1>Alean Landis</h1>
+       <p >Status :- <span id="status">Anonymous</span></p>
+        <div class="btn">
+              <button id="follow">Follow</button>
+        </div>
+    </div>
+<script>
+    const follow=document.getElementById('follow')
+    const status=document.getElementById('status')
+    const container=document.querySelector('.container')
+    const love=document.getElementById('love')
+    let flag=0;
+    follow.addEventListener('click',()=>{
+          if(flag==0){
+             status.innerHTML='Friend'
+             status.style.color='limegreen'
+             follow.innerHTML='unfollow'
+             flag=1;
+            }else{
+                status.innerHTML='Anonymous'
+                status.style.color='white'
+                follow.innerHTML='follow'
+              flag=0;
+          }
+    })
+   container.addEventListener("dblclick",()=>{
+    love.style.transform='translate(-50%,-50%) scale(1)'
+    love.style.opacity=0.8
+    setTimeout(() => {
+        love.style.opacity=0
+    }, 1000);
+})
+setTimeout(() => {
+    love.style.transform='translate(-50%,-50%) scale(0)'
+    }, 2000);
+   
+   
+</script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            height: 90vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .ball,
+        .ball1,
+        .ball2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(rgb(196, 17, 17), rgba(21, 21, 151, 0.712));
+            box-shadow: 10px 10px 25px rgba(0, 0, 255, 0.63);
+            filter: blur(30px);
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball"></div>
+    <div class="ball1"></div>
+    <div class="ball2"></div>
+
+
+    <script>
+        const ball = document.querySelector('.ball');
+        const ball1 = document.querySelector('.ball1');
+        const ball2 = document.querySelector('.ball2');
+        const ball3 = document.querySelector('.ball3');
+        const ball4 = document.querySelector('.ball4');
+        const ball5 = document.querySelector('.ball5');
+
+        window.addEventListener('mousemove', (e) => {
+            let x = e.clientX;
+            let y = e.clientY;
+
+            ball.animate([
+                {
+                    transform: `translate(${x}px, ${y}px)`
+
+                }
+            ], {
+                duration: 1000
+            })
+
+
+            ball1.animate([
+                {
+                    transform: `translate(${x}px, ${y}px)`
+                }
+            ], {
+                duration: 2000
+            })
+            ball2.animate([
+                {
+                    transform: `translate(${x}px, ${y}px)`
+                }
+            ], {
+                duration: 3000
+            })
+            ball3.animate([
+                {
+                    transform: `translate(${x}px, ${y}px)`
+                }
+            ], {
+                duration: 4000
+
+            })
+
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>
