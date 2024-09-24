@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+      body {
+        color: #fff;
+        font-family: monospace;
+        font-weight: 900;
+        font-size: 20px;
+      
+      }
+      .main {
+        margin: 200px auto;
+        width: 25%;
+        min-width: 250px;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10;
+        border-radius: 29px;
+        background: linear-gradient(145deg, #f0f0f0, #cacaca);
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+      }
+      #clock {
+        background-color: orange;
+        width: 200px;
+        height: 30px;
+        border-radius: 20px;
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="banner">Your <i>Time-Zone </i></div>
+      <div class="" id="clock"></div>
+    </div>
+  </body>
+  <script >const clock=document.getElementById('clock')
+    const time=setInterval(function(){
+        let date=new Date()
+        clock.innerHTML=date.toLocaleTimeString()
+    },1000)
+    console.log(time)</script>
+</html>

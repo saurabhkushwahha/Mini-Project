@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    /* width: 40%; */
+    /* min-width: 300px; */
+    /* max-width: 480px; */
+    /* min-height: 500px; */
+    margin: 5rem auto;
+    outline: 1px solid;
+    padding: 20px;
+    display: flex;
+    border-radius: 3px ;
+    flex-direction: column;
+}
+
+.container #Question-box {
+    /* background-color: red; */
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    font-weight: 600;
+}
+
+.container .Answer-box {
+    margin: 25px auto;
+    /* background-color: purple; */
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    cursor: pointer;
+}
+
+.container .ans {
+    font-weight: 500;
+    padding: 10px;
+    text-align: start;
+    background-color: rgba(0, 0, 0, 0.582);
+    color: white;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}
+.container .ans:hover {
+    background-color: white;
+    color: black;
+}
+
+.container .box-btn .btn {
+    width: 6em;
+    height: 3em;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.container .box-btn #submit {
+    background-color: orange;
+}
+
+.container #submit:hover {
+    background-color: rgba(255, 166, 0, 0.568);
+    outline: 1px solid orange;
+}
+
+#start {
+    width: 6em;
+    height: 3em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(50, 205, 50, 0.856);
+}
+
+#start:hover {
+    background-color: rgba(50, 205, 50, 0.432);
+    outline: 1px solid limegreen;
+}
+
+.box-btn {
+    margin: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+
+
+.container #point {
+    color: white;
+    font-style: italic;
+    font-weight: 500;
+    padding: 5px;
+    text-align: center;
+}

@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  }
+
+.Weather-container {
+  width: 27rem;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: transparent;
+  background-color: rgba(65, 65, 65, 0.295);
+  border: 2px solid rgba(255, 255, 255, 0.281);
+  color:white;
+  backdrop-filter: blur(7px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(20px);
+}
+.search-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px auto;
+  
+}
+.search-box input {
+    width: 70%;
+    height: 3.9rem;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.425);
+    border-radius: 40px;
+    color: white;
+    font-size: 20px;
+    caret-color:limegreen;
+    
+}
+.search-box button{ 
+    padding: 10px;
+    border-radius: 50%; 
+    outline: none;
+    background: transparent;
+}
+.search-box input::placeholder {
+  font-size: 20px;
+}
+
+.Weather-box1 {
+  width: 100%;
+ margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Weather-box1 #temperature {
+  font-size: 5rem;
+  position: relative;
+}
+.Weather-box1 #temperature span {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 10px;
+}
+.Weather-box1 p {
+  font-size: 3rem;
+}
+
+
+.Weather-box2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Weather-box2 .info-humidity {
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+.Weather-box2 .info-humidity h3 span{
+  font-weight: 400;
+}
+
+.Weather-box2 .info-wind {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+ gap: 5px;
+}
+.Weather-box2 .info-wind h3 span{
+    font-weight: 400;
+}
+

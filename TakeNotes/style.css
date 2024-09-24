@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #000;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: repeating-linear-gradient(to right, transparent 0px 50px, rgba(128, 128, 128, 0.74) 50px 51px),
+        repeating-linear-gradient(to bottom, transparent 0px 50px, rgba(128, 128, 128, 0.514) 50px 51px);
+    position: relative;
+}
+
+form {
+  background-color: #fff;
+  width: max-content;
+   border-radius: 25px;
+   padding: 5px;
+   margin: 10px;
+   display: flex;
+   gap: 10px;
+}
+
+form input,button{
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: transparent;
+    font-size: large;
+    cursor: pointer;
+}
+form input::-webkit-color-swatch-wrapper{
+     padding: 0;
+}
+form input ::-webkit-color-swatch{
+    border-radius: 50%;
+}
+.list textarea{
+    all: unset;
+    color: black;
+    padding: 10px;
+    caret-color: rgb(240, 240, 240);
+    color: white;
+}
+
+.list .notes{
+    box-shadow: 1px 5px 0px #121212 ,1px 3px 0px green;
+    background-color: #414141;
+    width: fit-content;
+    border-radius: 1rem;
+    border-top: 2rem solid rgb(255, 187, 0);
+    position: relative;
+    left: 10%;
+}
+#close{
+    position: absolute;
+    top: -38px;
+    right: 10px;
+    font-size: 1.6rem;
+    color:rgba(0, 0, 0, 0.452);
+     cursor: pointer;    
+     color: white;
+}

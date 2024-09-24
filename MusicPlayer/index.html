@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music-Player-App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- container -->
+        <!-- music-player -->
+        <div class="Music-player">
+            <!-- song-image -->
+            <div class="song-image">
+                <img src="./assests00/images/1.jpg" alt="" >
+            </div>
+            <!-- song-image-end -->
+            <!-- song-detail -->
+            <div class="song-details">
+                <span id="song-name"></span>
+                <span id="song-artist"></span>
+            </div>
+            <!-- song-details end -->
+             <!-- progress-bos   -->
+            <div class="progress-box" >
+                    <div class="progress-time">
+                         <span id="current-time"></span>
+                         <span id="total-time"></span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress"></div>
+                    </div>
+            </div>
+            <!-- progress-box end -->
+             <!-- player-controls -->
+              <div class="player-controls">
+                  <span id="prev"><button><i class="fa-solid fa-backward"></i></button></span>
+                  <span id="playpause"><button><i class="fa-solid fa-pause"></i></button></span>
+                  <span id="next"><button><i class="fa-solid fa-forward"></i></button></span>
+              </div>
+        </div>
+        <!-- music-player-end -->
+    </div>
+    <!-- container end -->
+     <script src="script.js"></script>
+</body>
+
+</html>

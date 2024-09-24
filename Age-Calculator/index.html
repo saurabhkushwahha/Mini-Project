@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       }
+       .container{
+        width: 100%;
+        min-height: 100vh;
+         background: linear-gradient(135deg, rgba(0, 0, 0, 0.726),#212121);
+         padding: 10px;
+         color: white;
+        
+       }
+        .calculator{
+            width: 100%;
+            max-width: 600px;
+            margin-left: 10%;
+            margin-top: 5%;
+
+        }
+        .calculator h1{
+            font-size: 70px;
+        }
+       .calculator span{
+             color: rgb(171, 173, 9);
+       }
+       .input-box{
+        margin: 60px 0px;
+        padding: 40px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.356);
+        display: flex;
+        align-items: center;
+       }
+       .input-box input,button{
+        flex: 1;
+        margin-right: 20px;
+        padding: 10px 20px;
+        border: 0;
+        outline: 0;
+        font-size: 18px;
+        border-radius: 10px;
+        position: relative;
+        background-color:rgb(171, 173, 9);
+       }
+     .input-box  input::-webkit-calender-picker-indicator{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width:auto ;
+           height: auto;
+        position: absolute;
+        background-position: calc(100% -20px);
+        background-size: 30px;
+        cursor: pointer;
+    }
+    #result{
+        color: rgb(171, 173, 9);
+         text-align: center;
+         font-size: 50px;
+    }
+
+    
+    
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1>JavaScript <br> <span>Age Calculator</span></h1>
+            <div class="input-box">
+                <input type="date" id="date">
+                <button onclick="calculateAge()" >Calculate</button>
+            </div>
+        </div>
+        <h1 id="result"></h1>
+    </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

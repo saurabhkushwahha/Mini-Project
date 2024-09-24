@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family:cursive;
+        font-weight: 600;
+      }
+      body {
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        align-items: center;
+      }
+      .card {
+        width: 100%;
+        max-width: 320px;
+        margin: auto;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        color: white;
+        --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+        padding: 30px;
+        border-radius: 1rem;
+        overflow: visible;
+        background: #f7ba2b;
+        background: var(--background);
+        position: relative;
+        z-index: 1;
+      }
+
+  
+      .card .input-box #username {
+        width: 100%;
+        max-width: 15rem;
+
+        height: 2rem;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        padding: 8px;
+        box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.397),
+          inset -2px -2px -2px rgba(19, 12, 12, 0.849);
+      }
+      input:focus,
+      input:hover {
+        outline: 1px solid rgb(217, 255, 0);
+      }
+      #image img {
+        border-radius: 50%;
+      }
+
+      button {
+        width: 7rem;
+        height: 2.6rem;
+        border-radius: 20px;
+        border: none;
+        background-color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ffffff8e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" >
+      <div id="image_card"><img src="http://placehold.it/360x150" alt="Dummy Image" /></div>
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" />
+      </div>
+      <div id="follower-box">
+        <h1>Followers :- <span id="followers">0000</span></h1>
+      </div>
+      <button>Search</button>
+    </div>
+    <script>
+      const IMG = document.getElementById("image_card");
+      const inputBox = document.getElementById("username");
+      const FOLLOWER = document.getElementById("followers");
+      const btn = document.querySelector("button");
+      var username;
+
+      btn.addEventListener("click", Task);
+      function addImage(image) {
+        IMG.outerHTML = `<img src="${image}" alt="" width="180" style="border-radius:50%"/>`;
+      }
+      function addFollowers(followers) {
+        FOLLOWER.innerHTML = followers;
+      }
+      function Task() {
+        let requestUrl = "https://api.github.com/users/" + inputBox.value;
+        inputBox.value = "";
+
+        console.log(requestUrl);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", requestUrl);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == "4") {
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            addImage(data.avatar_url);
+            console.log(data.avatar_url);
+            addFollowers(data.followers);
+            console.log(data.followers);
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

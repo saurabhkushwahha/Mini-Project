@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    /* background-color: rgba(19, 19, 70, 0.664); */
+    box-sizing: border-box;
+  }
+  .box {
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    min-width: 320px;
+    border-radius: 15px;
+    margin: 5rem auto;
+    padding: 30px;
+    outline: 2px solid white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  .box h1 {
+    text-align: center;
+    font-family: monospace;
+  }
+  .box .display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .box .display input {
+    width: 16rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    padding: 5px;
+    outline: 1px solid #414144;
+    caret-color: limegreen;
+    caret-shape:block;
+  }
+  .box .display #input-btn{
+    width: 2.7rem;
+    height: 2.7rem;
+    padding: 5px;
+    font-size: 24px;
+    border-radius: 10%;
+    background-color: limegreen;
+    outline: none;
+    border: none;
+    color: #fff;
+  }
+  .box .display #input-btn:hover,
+  .box .display #input-btn:focus {
+    background-color: rgba(50, 205, 50, 0.527);
+    outline: 3px solid #4141444d;
+  }
+ 
+ 
+  .box .task-list {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-content: center;
+  }
+  ul {
+    padding: 40px;
+  }
+  ul li {
+    text-decoration: underline;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: cursive;
+    font-weight: 500;
+    font-style: italic;
+    padding: 4px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: #41414134;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -25px;
+    width: 2rem;
+    height: 2rem;
+    background: url(./uncheck.png);
+    background-repeat: no-repeat;
+  }
+  ul .checked::before {
+    content: "";
+    width: 5rem;
+    height: 5rem;
+    top: 8px;
+    left: -25px;
+    position: absolute;
+    background: url(./check.png);
+    background-repeat: no-repeat;
+  }
+
+  ul .checked {
+    color: #414144;
+    text-decoration: line-through;
+    background-color: rgba(128, 128, 128, 0.356);
+  }
+
+
+  ul li span{
+       max-width: 20px;
+      padding: 4px;
+      border-radius: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+
+ul li span img{
+  max-width: 25px;
+  max-height: 25px;
+}
+
+ul li span img:hover{
+  background-color: #41414163;
+  border-radius: 50%;
+
+}

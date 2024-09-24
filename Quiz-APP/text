@@ -1,0 +1,90 @@
+const answerBox = document.querySelector('.Answer-box')
+const start=document.getElementById('start')
+const submit = document.getElementById('submit')
+const question = document.getElementById('Question-box')
+const Ans1 = document.getElementById("ans1")
+const Ans2 = document.getElementById("ans2")
+const Ans3 = document.getElementById("ans3")
+const Ans4 = document.getElementById("ans4")
+const QuestionArr = [
+    {
+        Question: "Q. What is the smallest unit of data in a computer ?",
+        ans1: "Gigabyte",
+        ans2: "Bit",
+        ans3: "Byte",
+        ans4: "Terabyte"
+    },
+    {
+        Question: "Q. Which of the following is NOT an anti-virus software ?",
+        ans1: "Avast",
+        ans2: "Linux",
+        ans3: "Norton",
+        ans4: "Kaspersky"
+    },
+    {
+        Question: "Q. What is full form of PROM ?",
+        ans1: "Program read-only memory",
+        ans2: "Primary read-only memory",
+        ans3: "Programmable read-only memory",
+        ans4: "Program read-output memory"
+    },
+    {
+        Question: "Q.Which unit of the computer is considerd as the brain of the computer ?",
+        ans1: "Memory Unit",
+        ans2: "Input Unit",
+        ans3: "CPU",
+        ans4: "Output Unit"
+    },
+    {
+        Question: "Q.In the context of computing, what is the full form of URL ?",
+        ans1: "Undistributed Resource Locator",
+        ans2: "Unified Resource Locator",
+        ans3: "Uniform Resource Locator",
+        ans4: "Uniform Region Locator"
+    }
+    
+]
+let i;
+
+let correctAnsArr = ["ans2", "ans2", "ans3", "ans3", "ans3"]
+
+start.addEventListener('click',()=> {
+    question.style.visibility='visible'
+    answerBox.style.visibility="visible"
+    i=0;
+    setQuestion(i)
+})
+submit.addEventListener("click",()=>{
+    i++
+    setQuestion(i)
+})
+     
+
+
+function setQuestion(i) {
+   question.innerHTML = `${QuestionArr[i].Question}`       // chalo yaha pai ham element create kar lenge
+   Ans1.innerHTML = `${QuestionArr[i].ans1}`
+   Ans2.innerHTML = `${QuestionArr[i].ans2}`
+   Ans3.innerHTML = `${QuestionArr[i].ans3}`
+   Ans4.innerHTML = `${QuestionArr[i].ans4}`
+   
+
+   //checking the answer
+   answerBox.addEventListener('click', (e) => {
+       e.stopPropagation() // here it's not working    
+       if (correctAnsArr[i] == e.target.id && e.target.tagName == "BUTTON") {
+           e.target.style.backgroundColor = "green"
+        }
+        else if (e.target.tagName == "DIV") {
+            e.target.style.backgroundColor = "white"
+        }
+        else {
+            document.getElementById(`${correctAnsArr[i]}`).style.backgroundColor = 'rgba(50, 205, 50, 0.856)'
+            e.target.style.backgroundColor = 'red'
+        }
+    })
+   
+
+
+}
+   

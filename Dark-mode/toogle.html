@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toogle-button</title>
+    <style>
+        body{
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      button {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+        .light{
+            background-color: white;
+            color: black;
+        }
+        .dark{
+            background-color: #000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click ME!</button>
+    <script>
+        const button=document.querySelector('#btn')
+        const body=document.querySelector('body')
+         var mode="light"
+        button.addEventListener('click',function(e){
+            if(mode=="light"){
+                // body.className="dark"
+                body.setAttribute("class", "dark")
+                mode='dark'
+                }
+             else{
+                // body.className='light'
+                body.setAttribute('class', 'light')
+                mode='light'
+             }
+        })
+    </script>
+</body>
+</html>
